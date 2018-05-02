@@ -1,0 +1,66 @@
+<html lang="en">
+<head>
+    <title>Kater Bater's Blog</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/index_style.css">
+    <link href="https://fonts.googleapis.com/css?family=IM+Fell+DW+Pica|IM+Fell+DW+Pica+SC|IM+Fell+English+SC|La+Belle+Aurore|Reem+Kufi" rel="stylesheet">
+</head>
+
+<body>
+<!----------------------------------NAVBAR---------------------------->
+<nav class="navbar navbar-dark" role="navigation">
+    <div class="container-fluid">
+        <button id='sidebar-toggle-button' class="navbar-toggler" type="button" data-toggle="collapse" data-target="#sidebarToggle">
+            <span class="navbar-toggler-icon pull-right"></span>
+        </button>
+        <form class="form-inline navbar-form" id="nav-login-form">
+            <div id='user_login' class="form-group nav navbar-nav float-lg-right">
+                <label class="control-label" for="username-field">
+                    <input id="username-field" class="form-control login" type="text" placeholder="User">
+                </label>
+                <label class="control-label" for="password-field">
+                    <input id="password-field" class="form-control login" type="password" placeholder="Password">
+                </label>
+                <label class="control-label" for="submit-btn">
+                    <button id="submit-btn" class="btn form-control login" type="submit">Login</button>
+                </label>
+                <label class="control-label" for="login-btn">
+                    <button id="login-btn" class=" btn form-control login" type="button" >Login</button>
+                </label>
+
+            </div>
+        </form>
+    </div>
+</nav>
+
+<div id="body">
+    <div class="row">
+
+        <!------------------------- SIDEBAR -------------------------->
+        <div id="sidebar-div" class="col-xl-3 col-lg-3 col-md-4 col-sm-5">
+            <ul class="nav list-group" role="directory" id="nav-list">
+                <li class="nav-item list-group-item" value="home"><a class="nav-link" href="#">...Went Home</a></li>
+                <li class="nav-item list-group-item" value="learned"><a class="nav-link" href="#">...Learned</a></li>
+                <li class="nav-item list-group-item" value="thought"><a class="nav-link" href="#">...Thought</a></li>
+                <li class="nav-item list-group-item" value="heard"><a class="nav-link" href="#">...Heard</a></li>
+                <li class="nav-item list-group-item" value="watched"><a class="nav-link" href="#">...Watched</a></li>
+                <li class="nav-item list-group-item" value="post"><a class="nav-link" href="#">...Wrote</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="index_style.js"></script>
+
+</body>
+</html>
