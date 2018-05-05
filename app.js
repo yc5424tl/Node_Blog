@@ -1,14 +1,22 @@
-let createError = require('http-errors');
+
 let express = require('express');
 let path = require('path');
-let cookieParser = require('cookie-parser');
-let logger = require('morgan');
-let mongoose = require('mongoose');
-let flash = require('express-flash');
-let session = require('express-session');
 
+let session = require('express-session');
+let cookieParser = require('cookie-parser');
+let bodyParser = require('body-parser');
+
+let logger = require('morgan');
+let createError = require('http-errors');
+let flash = require('express-flash');
+
+
+let mongoose = require('mongoose');
 let db_url = process.env.NODE_BLOG_DB;
 let sess_secret = process.env.BLOG_SESS_SECRET;
+
+let hbs = require('express-hbs');
+
 
 mongoose.connect(db_url)
     .then( () => {console.log('Connected to mLab');})
@@ -19,9 +27,19 @@ let usersRouter = require('./routes/users');
 
 let app = express();
 
+app.use(express.static('./public'));
+
+
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
+
+// app.set('views', './views');
+app.engine('hbs', hbs.express4({
+    partialsDir: __dirname + '/views/partials'
+}));
 app.set('view engine', 'hbs');
+app.set('views', __dirname + '/views');
+
+
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -31,7 +49,7 @@ app.use(cookieParser());
 app.use(session({secret: sess_secret, resave: false, saveUninitialized: false}));
 app.use(flash());
 
-app.use(express.static(path.join(__dirname, 'public')));
+
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);

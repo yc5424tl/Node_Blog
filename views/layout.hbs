@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <title>Kater Bater's Blog</title>
@@ -5,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/index_style.css">
+    <link rel="stylesheet" href="/stylesheets/index_style.css">
     <link href="https://fonts.googleapis.com/css?family=IM+Fell+DW+Pica|IM+Fell+DW+Pica+SC|IM+Fell+English+SC|La+Belle+Aurore|Reem+Kufi" rel="stylesheet">
 </head>
 
@@ -35,6 +36,7 @@
         </form>
     </div>
 </nav>
+<!----------------------------------END NAVBAR------------------------>
 
 <div id="body">
     <div class="row">
@@ -42,16 +44,41 @@
         <!------------------------- SIDEBAR -------------------------->
         <div id="sidebar-div" class="col-xl-3 col-lg-3 col-md-4 col-sm-5">
             <ul class="nav list-group" role="directory" id="nav-list">
-                <li class="nav-item list-group-item" value="home"><a class="nav-link" href="#">...Went Home</a></li>
-                <li class="nav-item list-group-item" value="learned"><a class="nav-link" href="#">...Learned</a></li>
-                <li class="nav-item list-group-item" value="thought"><a class="nav-link" href="#">...Thought</a></li>
-                <li class="nav-item list-group-item" value="heard"><a class="nav-link" href="#">...Heard</a></li>
-                <li class="nav-item list-group-item" value="watched"><a class="nav-link" href="#">...Watched</a></li>
-                <li class="nav-item list-group-item" value="post"><a class="nav-link" href="#">...Wrote</a></li>
+                <li class="nav-item list-group-item" value="home"><a class="nav-link" href="/">...Went Home</a></li>
+                <li class="nav-item list-group-item" value="learned"><a class="nav-link" href="view_learned.hbs">...Learned</a></li>
+                <li class="nav-item list-group-item" value="thought"><a class="nav-link" href="view_thought.hbs">...Thought</a></li>
+                <li class="nav-item list-group-item" value="heard"><a class="nav-link" href="view_heard.hbs">...Heard</a></li>
+                <li class="nav-item list-group-item" value="watched"><a class="nav-link" href="view_watched.hbs">...Watched</a></li>
+                <li class="nav-item list-group-item" value="post"><a class="nav-link" href="view_wrote.hbs">...Wrote</a></li>
             </ul>
         </div>
+        <!--------------------------END SIDEBAR----------------------->
+
+
+        <!------------------------- CONTENT--------------------------->
+        <div class="col">
+            <div id="content" class="container-fluid">
+                <div id="content-left" class="col-lg-5 col-md-10 col-sm-12 flex-item equal-width">
+                    {{{body}}}
+                    <footer class="footer">
+                        <div id="footer-div">
+                            <p class="footer-block">
+                                <span id="date-time-span"></span> Jacob Boline 2018
+                                <a href="https://github.com/yc5424tl/kater_bater_blog">this.github</a>
+                            </p>
+                        </div>
+                    </footer>
+                </div> <!--END CONTENT-LEFT--->
+                <div id="content-right" class="col-lg-5 col-md-10 col-sm-12 flex-item equal-width">
+                    <img id="content-right-img" class="img-responsive" src="/img/background-3203817.jpg">
+                </div><!--END CONTENT-RIGHT-->
+            </div><!-- END CONTAINER-FLUID -->
+        </div> <!-- END COL -->
+        <!------------------------- END CONTENT ---------------------->
+
     </div>
 </div>
+
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
@@ -60,7 +87,7 @@
         integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-<script src="index_style.js"></script>
+<script src="/javascripts/index_style.js"></script>
 
 </body>
 </html>

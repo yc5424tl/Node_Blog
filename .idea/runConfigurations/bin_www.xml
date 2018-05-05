@@ -1,8 +1,8 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="bin\www" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="project" path-to-js-file="bin/www" working-dir="$PROJECT_DIR$/../Node_Blog">
+  <configuration default="false" name="bin\www" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="project" path-to-js-file="bin/www" working-dir="$PROJECT_DIR$">
     <envs>
       <env name="DEBUG" value="untitled:*" />
-      <env name="MONGO_BLOG_URL" value="mongodb://superBlogger:mongoAdmin1234!@ds163769.mlab.com:63769/node_blog_db" />
+      <env name="NODE_BLOG_DB" value="mongodb://superBlogger:mongoAdmin1234!@ds163769.mlab.com:63769/node_blog_db" />
       <env name="BLOG_SESS_SECRET" value="b'\xfbP,)\xa7,u\xa4y\xe1\x01\xcbD\xf8\x08E\xa3\xd2)\xf8\xc0[\xbd4\xbdE('" />
     </envs>
     <browser url="http://localhost:3000/" />
