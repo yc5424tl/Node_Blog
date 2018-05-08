@@ -272,9 +272,10 @@ footer {
 
 
 /******************** NEW POST ***********************/
-#new-post {
-    display: none;
-}
+/*TODO
+/*#new-post {*/
+    /*display: none;*/
+/*}*/
 .dark {
     background-color: black;
     color:            white;
@@ -288,9 +289,10 @@ footer {
     background-color: black;
     color:            white;
 }
-#form-header {
-    display: none;
-}
+/*TODO
+/*#form-header {*/
+    /*display: none;*/
+/*}*/
 /******************* END NEW POST ********************/
 
 
@@ -330,9 +332,12 @@ footer {
 }
 /*------------- END -- POST-TYPE DROPDOWN MENU-------*/
 
-
+#form-type-thought, #form-type-learned {
+    display: none;
+}
 
 /*-------------- FORM: HEARD ------------------------*/
+/*TODO*/
 #form-type-heard {
     display: none;
 }
@@ -350,20 +355,23 @@ footer {
 
 
 /*----------------FORM BUTTONS-----------------------*/
-#watched-form-button, #heard-form-button {
+#watched-form-button, #heard-form-button,
+#thought-form-button, #learned-form-button {
     display:          block;
     width:            inherit;
     background-color: black;
     border:           1px solid white;
     color:            white;
 }
-#watched-form-button:hover, #heard-form-button:hover {
+#watched-form-button:hover, #heard-form-button:hover,
+#thought-form-button:hover, #learned-form-button:hover {
     transition:       0.4s;
     background-color: #F2010C;
     border:           1px solid white;
     color:            white;
 }
-#watched-form-button:focus, #heard-form-button:focus {
+#watched-form-button:focus, #heard-form-button:focus,
+#thought-form-button:focus, #learned-form-button:focus {
     background-color: darkred;
     border:           1px solid #F2010C;
     color:            white;
@@ -409,7 +417,9 @@ input[type='file'] {
     border-bottom-right-radius: 3pt;
     border-top-right-radius:    3pt;
 }
-#form-type-watched, #watched-file-input-outer-div, #watched-url-input-div{
+/*TODO*/
+#form-type-watched,
+#watched-file-input-outer-div, #watched-url-input-div{
     display: none;
 }
 #watched-file-input-outer-div, #watched-url-input-div {

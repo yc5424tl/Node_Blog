@@ -1,13 +1,11 @@
 let express = require('express');
 let router = express.Router();
-let app = express();
+
 
 let LearnedPost = require('../models/learned_post');
 let HeardPost = require('../models/heard_post');
 let ThoughtPost = require('../models/thought_post');
 let WatchedPost = require('../models/watched_post');
-
-app.use('/static', express.static('public'));
 
 
 /* GET home page. */
@@ -19,7 +17,7 @@ router.get('/', function(req, res, next) {
 // LEARNED //
 router.get('/learned', function(req, res, next) {
 
-    LearnedPost.find({all})
+    LearnedPost.find()
         .then((docs) => {
             res.render('view_learned', { title: 'Today I Learned', layout: 'layout', posts: docs });
         })
@@ -35,7 +33,7 @@ router.post('/learned', function(req, res) {
 
 // THOUGHT  //
 router.get('/thought', function(req, res, next) {
-   ThoughtPost.find({all})
+   ThoughtPost.find()
        .then((docs) => {
            res.render('view_thought', { title: 'Today I Thought', layout: 'layout', posts: docs });
        })
@@ -47,7 +45,7 @@ router.get('/thought', function(req, res, next) {
 
 // HEARD //
 router.get('/heard', function(req, res, next) {
-    HeardPost.find({all})
+    HeardPost.find()
         .then((docs) => {
             res.render('view_heard', { title: 'Today I Heard', layout: 'layout', posts: docs });
         })
@@ -59,7 +57,7 @@ router.get('/heard', function(req, res, next) {
 
 // WATCHED //
 router.get('/watched', function(req, res, next) {
-    WatchedPost.find((all))
+    WatchedPost.find()
         .then((docs) => {
             res.render('view_watched', { title: 'Today I Watched', layout: 'layout', posts: docs });
         })
@@ -71,7 +69,17 @@ router.get('/watched', function(req, res, next) {
 
 // WROTE //
 router.get('/wrote', function(req, res, next) {
+    res.render('view_wrote', {title: 'Today I Wrote', layout: 'layout'})
     });
+
+// router.post('/wrote', function(req, res) {
+//     if(req.body.text) {
+//         let postType = req.getElementsByClassName('form-var');
+//         res.send(postType);
+//         res.render(postType);
+//     }
+// })
+
 
 
 // LOGIN //

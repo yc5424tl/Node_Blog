@@ -1,0 +1,17 @@
+
+<div id="watched-posts">
+    {{#if watchedPosts}}
+        <ul>
+            {{#each watchedPosts}}
+                <li class="watched-post-li">
+                    <div class="watched-post-div">
+                        <a href="watchedPost/{{this._id}}">{{this.post_title}}</a>
+                        <p class="author-time">Posted by {{this.post_author}} @ {{this.date_created}}</p>
+                    </div>
+                </li>
+            {{/each}}
+        </ul>
+    {{else}}
+        <p>No 'Today I Watched' Posts</p>
+    {{/if}}
+</div>

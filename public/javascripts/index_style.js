@@ -1,5 +1,14 @@
+let mongoose = require('mongoose');
+
+//TODO have routeNewPostSubmission send a post request; handle in index.js
 
 $(document).ready(function() {
+
+    $('.post-btn').on('click', function() {
+        let formElement = $(this).valueOf();
+        routeNewPostSubmission(formElement);
+
+    });
 
     setInterval(function() {
         let dateTime;
@@ -30,11 +39,11 @@ $(document).ready(function() {
         $('#login-btn').toggle(effect, duration);
     });
 
-    $(".nav.list-group .nav-item.list-group-item").on('click', function() {
-        let selection = $(this);
-        let selValue = selection.attr("value");
-        viewPostsByType(selValue);
-    });
+    // $(".nav.list-group .nav-item.list-group-item").on('click', function() {
+    //     let selection = $(this);
+    //     let selValue = selection.attr("value");
+    //     viewPostsByType(selValue);
+    // });
 
     $(".dropdown-menu .dropdown-item.opt").on('click', function() {
         let postType = $(this).attr("name");
@@ -72,11 +81,11 @@ function getPostForm(postType) {
     switch (postType) {
         case 'Today I Learned ':
             hideFormVars();
-            //showFormVar();
+            showFormVar('form-type-learned');
             break;
         case 'Today I Thought ':
             hideFormVars();
-            //showFormVar();
+            showFormVar('form-type-thought');
             break;
         case 'Today I Heard ':
             hideFormVars();
@@ -90,47 +99,47 @@ function getPostForm(postType) {
             alert('Unexpected Error Rendering Form')
     }
 }
-
+//
 function hideFormVars() {
     $('.form-var').each(function() {
         $(this).hide();
     })
 }
-
+//
 function showFormVar(formId) {
     $('#' + formId).show();
 }
-
-function viewPostsByType(value) {
-    switch (value) {
-        case 'home':
-            homeView();
-            break;
-        case 'learned':
-            learnedView();
-            break;
-        case 'thought':
-            thoughtView();
-            break;
-        case 'heard':
-            heardView();
-            break;
-        case 'watched':
-            watchedView();
-            break;
-        case 'post':
-            postView();
-            break;
-        default:
-            alert('no matched value for view');
-    }
-}
-
-function homeView() {
-    $('#new-post').hide();
-    $('#home-page').show();
-}
-
+//
+// function viewPostsByType(value) {
+//     switch (value) {
+//         case 'home':
+//             homeView();
+//             break;
+//         case 'learned':
+//             learnedView();
+//             break;
+//         case 'thought':
+//             thoughtView();
+//             break;
+//         case 'heard':
+//             heardView();
+//             break;
+//         case 'watched':
+//             watchedView();
+//             break;
+//         case 'post':
+//             postView();
+//             break;
+//         default:
+//             alert('no matched value for view');
+//     }
+// }
+//
+// function homeView() {
+//     $('#new-post').hide();
+//     $('#home-page').show();
+// }
+//
 function postView() {
     $('#home-page').hide();
     $('#new-post').show();
@@ -139,6 +148,49 @@ function postView() {
         $(this).hide();
     });
 }
+
+function routeNewPostSubmission(form) {
+
+    let formValue = form.attr('value');
+    let functionCall;
+
+    switch(formValue) {
+
+        case 'heard':
+            functionCall = postHeard;
+            break;
+        case 'learned':
+            functionCall = postLearned;
+            break;
+        case 'thought':
+            functionCall = postThought;
+            break;
+        case 'watched':
+            functionCall = postWatched;
+            break;
+        default:
+            alert('An error occured while processing your new post.')
+
+        functionCall(form);
+    }
+}
+
+function buildHeard(form) {
+}
+
+function buildLearned(form) {}
+
+function buildThought(form) {}
+
+function buildWatched(form) {}
+
+function postHeard(form) {}
+
+function postLearned(form) {}
+
+function postThought(form) {}
+
+function postWatched(form) {}
 
 
 

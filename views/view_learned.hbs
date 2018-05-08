@@ -1,0 +1,17 @@
+
+<div id="learned-posts">
+    {{#if learnedPosts}}
+        <ul>
+            {{#each learnedPosts}}
+                <li class="learned-post-li">
+                    <div class="learned-post-div">
+                        <a href="learnedPost/{{this._id}}">{{this.post_title}}</a>
+                        <p class="author-time">Posted by {{this.post_author}} @ {{this.date_created}}</p>
+                    </div>
+                </li>
+            {{/each}}
+        </ul>
+    {{else}}
+        <p>No 'Today I Learned' Posts</p>
+    {{/if}}
+</div>

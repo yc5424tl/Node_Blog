@@ -1,0 +1,17 @@
+
+<div id="thought-posts">
+    {{#if thoughtPosts}}
+        <ul>
+            {{#each thoughtPosts}}
+                <li class="thought-post-li">
+                    <div class="thought-post-div">
+                        <a href="thoughtPost/{{this._id}}">{{this.post_title}}</a>
+                        <p class="author-time">Posted by {{this.post_author}} @ {{this.date_created}}</p>
+                    </div>
+                </li>
+            {{/each}}
+        </ul>
+    {{else}}
+        <p>No 'Today I Thought' Posts</p>
+    {{/if}}
+</div>
