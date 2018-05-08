@@ -25,4 +25,10 @@ let UserSchema = new mongoose.Schema({
 
 let User = mongoose.model('User', UserSchema);
 
-module.exports = User;
+function validPassword(password){
+    //TODO
+    return !!password.type.isString;
+
+}
+
+module.export = validPassword(); User();
